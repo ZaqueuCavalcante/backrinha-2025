@@ -1,0 +1,49 @@
+services:
+  nginx:
+    image: nginx:1.25-alpine
+    container_name: rinha-nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - api1
+      - api2
+    ports:
+      - "9999:9999"
+    networks:
+      - backend
+      - payment-processor
+    deploy:
+      resources:
+        limits:
+          cpus: "0.20"
+          memory: "20MB"
+
+  api1: &api
+    image: zaqueucavalcante/backrinha-2025:tag
+    hostname: api1
+    environment:
+      - APP_PORT=5000
+      - PROCESSOR_DEFAULT_URL=http://payment-processor-default:8080
+      - PROCESSOR_FALLBACK_URL=http://payment-processor-fallback:8080
+    networks:
+      - backend
+      - payment-processor
+    deploy:
+      resources:
+        limits:
+          cpus: "0.65"
+          memory: "165MB"
+
+  api2:
+    <<: *api
+    hostname: api2
+    environment:
+      - APP_PORT=5000
+      - PROCESSOR_DEFAULT_URL=http://payment-processor-default:8080
+      - PROCESSOR_FALLBACK_URL=http://payment-processor-fallback:8080
+
+networks:
+  backend:
+    driver: bridge
+  payment-processor:
+    external: true

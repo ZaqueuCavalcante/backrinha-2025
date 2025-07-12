@@ -1,0 +1,23 @@
+{
+    "version": "0.2.0",
+    "compounds": [
+        {
+            "name": "RUN",
+            "configurations": [
+                "BACKEND",
+            ],
+            "preLaunchTask": "build",
+            "stopAll": true
+        }
+    ],
+    "configurations": [
+        {
+            "name": "BACKEND",
+            "type": "coreclr",
+            "request": "launch",
+            "requireExactSource": false,
+            "cwd": "${workspaceFolder}/Backend",
+            "program": "${workspaceFolder}/Backend/bin/Debug/net9.0/Backend.dll",
+        },
+    ]
+}

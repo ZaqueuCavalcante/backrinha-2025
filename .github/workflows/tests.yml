@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  build-test-migrate:
+  restore-build-run:
     runs-on: ubuntu-latest
 
     steps:

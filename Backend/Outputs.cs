@@ -2,8 +2,8 @@ namespace Backend;
 
 public class PaymentSummaryOut
 {
-    public ProcessorSummaryOut Default { get; set; }
-    public ProcessorSummaryOut Fallback { get; set; }
+    public ProcessorSummaryOut Default { get; set; } = new();
+    public ProcessorSummaryOut Fallback { get; set; } = new();
 }
 
 public class ProcessorSummaryOut

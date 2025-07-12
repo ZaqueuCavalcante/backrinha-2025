@@ -2,7 +2,7 @@ using System.Net;
 
 namespace Syki.Tests.Integration;
 
-public partial class IntegrationTests : IntegrationTestBase
+public class PostPaymentTests : IntegrationTestBase
 {
     [Test]
     public async Task Should_post_payment()

@@ -1,9 +1,9 @@
 namespace Syki.Tests.Integration;
 
-public partial class IntegrationTests : IntegrationTestBase
+public class GetEmptyPaymentsSummaryTests : IntegrationTestBase
 {
     [Test]
-    public async Task Should_get_payments_summary()
+    public async Task Should_get_empty_payments_summary()
     {
         // Arrange
         var client = _backend.GetClient();

@@ -1,0 +1,10 @@
+{
+    "name": "Zaqueu Cavalcante",
+    "social": ["https://www.linkedin.com/in/zaqueu-cavalcante", "https://github.com/ZaqueuCavalcante"],
+    "source-code-repo": "https://github.com/ZaqueuCavalcante/backrinha-2025",
+    "langs": ["C#"],
+    "storages": ["postgresql", "redis"],
+    "messaging": ["rabbitmq", "nats"],
+    "load-balancers": ["nginx"],
+    "other-technologies": ["ASP.NET"]
+}
